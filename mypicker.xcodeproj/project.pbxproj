@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D3A5E4C1F13CA5100614DD2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A5E451F13CA5100614DD2 /* Result.swift */; };
+		8D3A5E4D1F13CA5100614DD2 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A5E461F13CA5100614DD2 /* Socket.swift */; };
+		8D3A5E4E1F13CA5100614DD2 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A5E481F13CA5100614DD2 /* TCPClient.swift */; };
+		8D3A5E4F1F13CA5100614DD2 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A5E491F13CA5100614DD2 /* UDPClient.swift */; };
+		8D3A5E501F13CA5100614DD2 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A5E4A1F13CA5100614DD2 /* ytcpsocket.c */; };
+		8D3A5E511F13CA5100614DD2 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A5E4B1F13CA5100614DD2 /* yudpsocket.c */; };
 		E5C9C0711F13186200AD9DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C9C0701F13186200AD9DB3 /* AppDelegate.swift */; };
 		E5C9C0731F13186200AD9DB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C9C0721F13186200AD9DB3 /* ViewController.swift */; };
 		E5C9C0761F13186200AD9DB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C9C0741F13186200AD9DB3 /* Main.storyboard */; };
@@ -34,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D3A5E441F13CA5000614DD2 /* mypicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mypicker-Bridging-Header.h"; sourceTree = "<group>"; };
+		8D3A5E451F13CA5100614DD2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = SOURCE_ROOT; };
+		8D3A5E461F13CA5100614DD2 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = SOURCE_ROOT; };
+		8D3A5E471F13CA5100614DD2 /* SwiftSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftSocket.h; sourceTree = SOURCE_ROOT; };
+		8D3A5E481F13CA5100614DD2 /* TCPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = SOURCE_ROOT; };
+		8D3A5E491F13CA5100614DD2 /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = SOURCE_ROOT; };
+		8D3A5E4A1F13CA5100614DD2 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = SOURCE_ROOT; };
+		8D3A5E4B1F13CA5100614DD2 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = SOURCE_ROOT; };
 		E5C9C06D1F13186200AD9DB3 /* mypicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mypicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C9C0701F13186200AD9DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5C9C0721F13186200AD9DB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,9 +114,17 @@
 				E5C9C0701F13186200AD9DB3 /* AppDelegate.swift */,
 				E5C9C0721F13186200AD9DB3 /* ViewController.swift */,
 				E5C9C0741F13186200AD9DB3 /* Main.storyboard */,
+				8D3A5E451F13CA5100614DD2 /* Result.swift */,
+				8D3A5E461F13CA5100614DD2 /* Socket.swift */,
+				8D3A5E471F13CA5100614DD2 /* SwiftSocket.h */,
+				8D3A5E481F13CA5100614DD2 /* TCPClient.swift */,
+				8D3A5E491F13CA5100614DD2 /* UDPClient.swift */,
+				8D3A5E4A1F13CA5100614DD2 /* ytcpsocket.c */,
+				8D3A5E4B1F13CA5100614DD2 /* yudpsocket.c */,
 				E5C9C0771F13186200AD9DB3 /* Assets.xcassets */,
 				E5C9C0791F13186200AD9DB3 /* LaunchScreen.storyboard */,
 				E5C9C07C1F13186200AD9DB3 /* Info.plist */,
+				8D3A5E441F13CA5000614DD2 /* mypicker-Bridging-Header.h */,
 			);
 			path = mypicker;
 			sourceTree = "<group>";
@@ -194,6 +216,7 @@
 					E5C9C06C1F13186200AD9DB3 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 423NT4MUQS;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					E5C9C0801F13186200AD9DB3 = {
@@ -262,8 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D3A5E511F13CA5100614DD2 /* yudpsocket.c in Sources */,
+				8D3A5E4F1F13CA5100614DD2 /* UDPClient.swift in Sources */,
+				8D3A5E4D1F13CA5100614DD2 /* Socket.swift in Sources */,
+				8D3A5E4E1F13CA5100614DD2 /* TCPClient.swift in Sources */,
+				8D3A5E4C1F13CA5100614DD2 /* Result.swift in Sources */,
 				E5C9C0731F13186200AD9DB3 /* ViewController.swift in Sources */,
 				E5C9C0711F13186200AD9DB3 /* AppDelegate.swift in Sources */,
+				8D3A5E501F13CA5100614DD2 /* ytcpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,11 +446,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 423NT4MUQS;
 				INFOPLIST_FILE = mypicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = imnu.edu.cn.mypicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mypicker/mypicker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,11 +462,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 423NT4MUQS;
 				INFOPLIST_FILE = mypicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = imnu.edu.cn.mypicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mypicker/mypicker-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -516,6 +550,7 @@
 				E5C9C0971F13186200AD9DB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5C9C0981F13186200AD9DB3 /* Build configuration list for PBXNativeTarget "mypickerTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +559,7 @@
 				E5C9C09A1F13186200AD9DB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5C9C09B1F13186200AD9DB3 /* Build configuration list for PBXNativeTarget "mypickerUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +568,7 @@
 				E5C9C09D1F13186200AD9DB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

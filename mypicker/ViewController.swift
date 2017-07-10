@@ -19,10 +19,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var ipAdress: UITextField!
     @IBOutlet weak var port: UITextField!
+    var client: TCPClient?
+    var pMessage="0123"
+    var iMessage="0000"
+    var dMessage="0000"
     
+    @IBAction func ConnectServer(_ sender: Any) {
+        client = TCPClient(address: ipAdress.text!, port: Int32(port.text!)!)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    //    client = TCPClient(address: host, port: Int32(port))
         pPicker.dataSource = self
         pPicker.delegate = self
         iPicker.dataSource = self
@@ -70,10 +79,38 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,
                     forComponent component: Int) -> String? {
         if(pickerView.restorationIdentifier=="P"){
-            print(100)
-            
+    
+            pMessage = String(pickerView.selectedRow(inComponent: 0))+String(pickerView.selectedRow(inComponent: 1))+String(pickerView.selectedRow(inComponent: 2))+String(pickerView.selectedRow(inComponent: 3))
         }
-        print(component,row)
+        if(pickerView.restorationIdentifier=="I"){
+            
+            iMessage = String(pickerView.selectedRow(inComponent: 0))+String(pickerView.selectedRow(inComponent: 1))+String(pickerView.selectedRow(inComponent: 2))+String(pickerView.selectedRow(inComponent: 3))
+        }
+        if(pickerView.restorationIdentifier=="D"){
+            
+            dMessage = String(pickerView.selectedRow(inComponent: 0))+String(pickerView.selectedRow(inComponent: 1))+String(pickerView.selectedRow(inComponent: 2))+String(pickerView.selectedRow(inComponent: 3))
+        }
+
+        print("p:"+pMessage)
+        print("I:"+iMessage)
+        print("D:"+dMessage)
+        let senmessage=pMessage+iMessage+dMessage
+        print("send:"+senmessage)
+        
+        
+        guard let client = client else { return }
+        
+        switch client.connect(timeout: 10) {
+        case .success:
+            appendToTextField(string: "Connected to host \(client.address)")
+            if let response = sendRequest(string: senmessage, using: client) {
+                appendToTextField(string: "Response: \(response)")
+            }
+        case .failure(let error):
+            appendToTextField(string: String(describing: error))
+        }
+        
+
         return String(row)
     }
     
@@ -93,6 +130,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //self.mytext.resignFirstResponder();
         return true;
     }
+    private func sendRequest(string: String, using client: TCPClient) -> String? {
+        appendToTextField(string: "Sending data ... ")
+        
+        switch client.send(string: string) {
+        case .success:
+            return readResponse(from: client)
+        case .failure(let error):
+            appendToTextField(string: String(describing: error))
+            return nil
+        }
+    }
+    
+    private func readResponse(from client: TCPClient) -> String? {
+        guard let response = client.read(1024*10) else { return nil }
+        
+        return String(bytes: response, encoding: .utf8)
+    }
+    
+    private func appendToTextField(string: String) {
+        print(string)
+        ipAdress.text = ipAdress.text?.appending("\n\(string)")
+    }
+
 
 
 }
