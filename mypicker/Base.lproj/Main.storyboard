@@ -42,11 +42,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRH-K0-HTA">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="D" translatesAutoresizingMaskIntoConstraints="NO" id="cRH-K0-HTA">
                                 <rect key="frame" x="56" y="403" width="200" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEi-HJ-TCi">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="I" translatesAutoresizingMaskIntoConstraints="NO" id="wEi-HJ-TCi">
                                 <rect key="frame" x="58" y="257" width="200" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
@@ -71,7 +71,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mak-Xg-ZLt">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="P" translatesAutoresizingMaskIntoConstraints="NO" id="mak-Xg-ZLt">
                                 <rect key="frame" x="65" y="117" width="200" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>

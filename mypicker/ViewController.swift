@@ -69,6 +69,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //设置选择框各选项的内容，继承于UIPickerViewDelegate协议
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,
                     forComponent component: Int) -> String? {
+        if(pickerView.restorationIdentifier=="P"){
+            print(100)
+            
+        }
+        print(component,row)
         return String(row)
     }
     
