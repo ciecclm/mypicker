@@ -94,11 +94,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         print("p:"+pMessage)
         print("I:"+iMessage)
         print("D:"+dMessage)
-        let senmessage=pMessage+iMessage+dMessage
+        let mp=(multiplep.text as! NSString).intValue
+        let mi=(multiplei.text as! NSString).intValue
+        let md=(multipled.text as! NSString).intValue
+        let tempstr=String(format:"%04d",mp)+String(format:"%04d",mi)+String(format:"%04d",md)
+        let senmessage=pMessage+iMessage+dMessage+tempstr
         print("send:"+senmessage)
         
         
-        guard let client = client else { return }
+        guard let client = client else { return "0"}
         
         switch client.connect(timeout: 10) {
         case .success:
